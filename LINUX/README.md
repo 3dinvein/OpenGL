@@ -1,1 +1,4 @@
-# Arquivos que servirão de base para esta série
+# ARQUIVOS:  
+Em **Arquivos** vão estar os arquivos padrões usados para faciclitar.    
+
+# JOGOS  
