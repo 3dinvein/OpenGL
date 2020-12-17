@@ -1,0 +1,421 @@
+# depslib dependency file v1.0
+1480030082 source:c:\users\eduardo\desktop\tank\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<string.h>
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\windows.h
+	<winresrc.h>
+	<stdarg.h>
+	<windef.h>
+	<wincon.h>
+	<winbase.h>
+	<wingdi.h>
+	<winuser.h>
+	<winnls.h>
+	<winver.h>
+	<winnetwk.h>
+	<winreg.h>
+	<winsvc.h>
+	<cderr.h>
+	<dde.h>
+	<ddeml.h>
+	<dlgs.h>
+	<imm.h>
+	<lzexpand.h>
+	<mmsystem.h>
+	<nb30.h>
+	<rpc.h>
+	<shellapi.h>
+	<winperf.h>
+	<commdlg.h>
+	<winspool.h>
+	<winsock2.h>
+	<winsock.h>
+	<ole2.h>
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\winresrc.h
+	<winuser.h>
+	<winnt.h>
+	<winver.h>
+	<dde.h>
+	<dlgs.h>
+	<commctrl.h>
+
+1301114764 c:\program files (x86)\codeblocks\mingw\include\winuser.h
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\winnt.h
+	<winerror.h>
+	<string.h>
+	<basetsd.h>
+	<pshpack4.h>
+	<poppack.h>
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\winerror.h
+
+1341013976 c:\program files (x86)\codeblocks\mingw\include\string.h
+	<_mingw.h>
+	<stddef.h>
+
+1341013970 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
+
+1301114748 c:\program files (x86)\codeblocks\mingw\include\basetsd.h
+
+1301114756 c:\program files (x86)\codeblocks\mingw\include\pshpack4.h
+
+1301114756 c:\program files (x86)\codeblocks\mingw\include\poppack.h
+
+1301114764 c:\program files (x86)\codeblocks\mingw\include\winver.h
+
+1301114748 c:\program files (x86)\codeblocks\mingw\include\dde.h
+
+1301114750 c:\program files (x86)\codeblocks\mingw\include\dlgs.h
+
+1301114748 c:\program files (x86)\codeblocks\mingw\include\commctrl.h
+	<prsht.h>
+
+1301114756 c:\program files (x86)\codeblocks\mingw\include\prsht.h
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\windef.h
+	<winnt.h>
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\wincon.h
+
+1301114760 c:\program files (x86)\codeblocks\mingw\include\winbase.h
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\wingdi.h
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\winnls.h
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\winnetwk.h
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\winreg.h
+
+1301114764 c:\program files (x86)\codeblocks\mingw\include\winsvc.h
+
+1301114748 c:\program files (x86)\codeblocks\mingw\include\cderr.h
+
+1301114748 c:\program files (x86)\codeblocks\mingw\include\ddeml.h
+
+1301114750 c:\program files (x86)\codeblocks\mingw\include\imm.h
+
+1301114754 c:\program files (x86)\codeblocks\mingw\include\lzexpand.h
+
+1301114754 c:\program files (x86)\codeblocks\mingw\include\mmsystem.h
+
+1301114754 c:\program files (x86)\codeblocks\mingw\include\nb30.h
+
+1301114758 c:\program files (x86)\codeblocks\mingw\include\rpc.h
+	<windows.h>
+	<rpcdce.h>
+	<rpcnsi.h>
+	<rpcnterr.h>
+	<winerror.h>
+	<excpt.h>
+
+1301114758 c:\program files (x86)\codeblocks\mingw\include\rpcdce.h
+	<basetyps.h>
+	<rpcdcep.h>
+
+1301114748 c:\program files (x86)\codeblocks\mingw\include\basetyps.h
+
+1301114758 c:\program files (x86)\codeblocks\mingw\include\rpcdcep.h
+
+1301114758 c:\program files (x86)\codeblocks\mingw\include\rpcnsi.h
+
+1301114758 c:\program files (x86)\codeblocks\mingw\include\rpcnterr.h
+
+1341013972 c:\program files (x86)\codeblocks\mingw\include\excpt.h
+	<_mingw.h>
+	<windef.h>
+
+1301114760 c:\program files (x86)\codeblocks\mingw\include\shellapi.h
+	<pshpack2.h>
+	<poppack.h>
+
+1301114756 c:\program files (x86)\codeblocks\mingw\include\pshpack2.h
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\winperf.h
+
+1301114748 c:\program files (x86)\codeblocks\mingw\include\commdlg.h
+	<unknwn.h>
+	<prsht.h>
+
+1301114760 c:\program files (x86)\codeblocks\mingw\include\unknwn.h
+	<windows.h>
+	<objfwd.h>
+	<wtypes.h>
+
+1301114756 c:\program files (x86)\codeblocks\mingw\include\objfwd.h
+	<basetyps.h>
+
+1301114764 c:\program files (x86)\codeblocks\mingw\include\wtypes.h
+	<rpc.h>
+	<rpcndr.h>
+
+1301114758 c:\program files (x86)\codeblocks\mingw\include\rpcndr.h
+	<rpcnsip.h>
+	<objfwd.h>
+
+1301114758 c:\program files (x86)\codeblocks\mingw\include\rpcnsip.h
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\winspool.h
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\winsock2.h
+	<windows.h>
+
+1301114762 c:\program files (x86)\codeblocks\mingw\include\winsock.h
+	<windows.h>
+	<mswsock.h>
+
+1301114754 c:\program files (x86)\codeblocks\mingw\include\mswsock.h
+
+1301114756 c:\program files (x86)\codeblocks\mingw\include\ole2.h
+	<winerror.h>
+	<objbase.h>
+	<olectlid.h>
+	<oleauto.h>
+	<oleidl.h>
+
+1301114754 c:\program files (x86)\codeblocks\mingw\include\objbase.h
+	<rpc.h>
+	<rpcndr.h>
+	<stdlib.h>
+	<basetyps.h>
+	<wtypes.h>
+	<unknwn.h>
+	<objidl.h>
+	<cguid.h>
+
+1341013976 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
+	<_mingw.h>
+	<stddef.h>
+
+1301114756 c:\program files (x86)\codeblocks\mingw\include\objidl.h
+	<objfwd.h>
+
+1301114748 c:\program files (x86)\codeblocks\mingw\include\cguid.h
+
+1301114756 c:\program files (x86)\codeblocks\mingw\include\olectlid.h
+
+1301114756 c:\program files (x86)\codeblocks\mingw\include\oleauto.h
+	<oaidl.h>
+
+1301114754 c:\program files (x86)\codeblocks\mingw\include\oaidl.h
+	<windows.h>
+	<ole2.h>
+
+1301114756 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
+	<objfwd.h>
+
+976674172 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1301114764 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
+
+1301114764 c:\program files (x86)\codeblocks\mingw\include\gl\glu.h
+	<stddef.h>
+	<GL/gl.h>
+
+1341013976 c:\program files (x86)\codeblocks\mingw\include\stdio.h
+	<_mingw.h>
+	<stddef.h>
+	<stdarg.h>
+	<sys/types.h>
+
+1341013980 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
+	<_mingw.h>
+	<stddef.h>
+
+1341013970 c:\program files (x86)\codeblocks\mingw\include\conio.h
+	<_mingw.h>
+
+1341013976 c:\program files (x86)\codeblocks\mingw\include\time.h
+	<_mingw.h>
+	<stddef.h>
+
+1341013976 c:\program files (x86)\codeblocks\mingw\include\strings.h
+	<string.h>
+
+1480027068 source:f:\trabalho-opengl\tank\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<string.h>
+
+1479939172 source:j:\trabalho-opengl\tank\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<strings.h>
+
+1479990502 source:e:\trabalho-opengl\tank\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<strings.h>
+
+1480227380 source:c:\users\eduardo\desktop\encaixeperfeito\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<string.h>
+	"classe/player.h"
+	"classe/fit1.h"
+	"classe/line.h"
+	"classe/menu.h"
+	"classe/global.h"
+
+1480219973 c:\users\eduardo\desktop\encaixeperfeito\classe\player.h
+
+1480220081 c:\users\eduardo\desktop\encaixeperfeito\classe\fit1.h
+
+1480221713 c:\users\eduardo\desktop\encaixeperfeito\classe\line.h
+
+1480227863 c:\users\eduardo\desktop\encaixeperfeito\classe\menu.h
+
+1480226891 c:\users\eduardo\desktop\encaixeperfeito\classe\global.h
+
+1480473323 source:c:\users\eduardo\desktop\encaixe perfeito\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	"include/biblioteca.h"
+	"classe/player.h"
+	"classe/player2.h"
+	"classe/player3.h"
+	"classe/fit1.h"
+	"classe/fit2.h"
+	"classe/fit3.h"
+	"classe/line.h"
+	"classe/menu.h"
+	"classe/global.h"
+
+1480228344 c:\users\eduardo\desktop\encaixe perfeito\include\biblioteca.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<string.h>
+
+1480219974 c:\users\eduardo\desktop\encaixe perfeito\classe\player.h
+
+1480268556 c:\users\eduardo\desktop\encaixe perfeito\classe\player2.h
+
+1480220082 c:\users\eduardo\desktop\encaixe perfeito\classe\fit1.h
+
+1480221714 c:\users\eduardo\desktop\encaixe perfeito\classe\line.h
+
+1480473843 c:\users\eduardo\desktop\encaixe perfeito\classe\menu.h
+
+1480473878 c:\users\eduardo\desktop\encaixe perfeito\classe\global.h
+
+1480268612 c:\users\eduardo\desktop\encaixe perfeito\classe\fit2.h
+
+1480269040 c:\users\eduardo\desktop\encaixe perfeito\classe\player3.h
+
+1480271464 c:\users\eduardo\desktop\encaixe perfeito\classe\fit3.h
+
+1480272344 source:f:\trabalho-opengl\encaixe perfeito\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	"include/biblioteca.h"
+	"classe/player.h"
+	"classe/player2.h"
+	"classe/player3.h"
+	"classe/fit1.h"
+	"classe/fit2.h"
+	"classe/fit3.h"
+	"classe/line.h"
+	"classe/menu.h"
+	"classe/global.h"
+
+1480228344 f:\trabalho-opengl\encaixe perfeito\include\biblioteca.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<string.h>
+
+1480219974 f:\trabalho-opengl\encaixe perfeito\classe\player.h
+
+1480268556 f:\trabalho-opengl\encaixe perfeito\classe\player2.h
+
+1480269040 f:\trabalho-opengl\encaixe perfeito\classe\player3.h
+
+1480220082 f:\trabalho-opengl\encaixe perfeito\classe\fit1.h
+
+1480268612 f:\trabalho-opengl\encaixe perfeito\classe\fit2.h
+
+1480271464 f:\trabalho-opengl\encaixe perfeito\classe\fit3.h
+
+1480221714 f:\trabalho-opengl\encaixe perfeito\classe\line.h
+
+1480227864 f:\trabalho-opengl\encaixe perfeito\classe\menu.h
+
+1480272542 f:\trabalho-opengl\encaixe perfeito\classe\global.h
+
+1480601626 source:d:\trabalho-opengl\jogo 3d-luiz eduardo\encaixe perfeito\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	"include/biblioteca.h"
+	"classe/player.h"
+	"classe/player2.h"
+	"classe/player3.h"
+	"classe/fit1.h"
+	"classe/fit2.h"
+	"classe/fit3.h"
+	"classe/line.h"
+	"classe/menu.h"
+	"classe/global.h"
+
+1480228344 d:\trabalho-opengl\jogo 3d-luiz eduardo\encaixe perfeito\include\biblioteca.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<string.h>
+
+1480219974 d:\trabalho-opengl\jogo 3d-luiz eduardo\encaixe perfeito\classe\player.h
+
+1480268556 d:\trabalho-opengl\jogo 3d-luiz eduardo\encaixe perfeito\classe\player2.h
+
+1480269040 d:\trabalho-opengl\jogo 3d-luiz eduardo\encaixe perfeito\classe\player3.h
+
+1480220082 d:\trabalho-opengl\jogo 3d-luiz eduardo\encaixe perfeito\classe\fit1.h
+
+1480268612 d:\trabalho-opengl\jogo 3d-luiz eduardo\encaixe perfeito\classe\fit2.h
+
+1480271464 d:\trabalho-opengl\jogo 3d-luiz eduardo\encaixe perfeito\classe\fit3.h
+
+1480221714 d:\trabalho-opengl\jogo 3d-luiz eduardo\encaixe perfeito\classe\line.h
+
+1480473844 d:\trabalho-opengl\jogo 3d-luiz eduardo\encaixe perfeito\classe\menu.h
+
+1480600734 d:\trabalho-opengl\jogo 3d-luiz eduardo\encaixe perfeito\classe\global.h
+
