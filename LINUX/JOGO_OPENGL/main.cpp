@@ -1,5 +1,8 @@
 #include <GL/freeglut.h>
 
+#include "classes/player.cpp"
+
+Player player;
 
 void inicializar(void);
 void desenha(void);
@@ -25,6 +28,8 @@ void desenha()
   glOrtho(-100,100,-100,100,-1,1);
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
+
+  player.criarPlayer();
   glutSwapBuffers();
 
 }
@@ -32,4 +37,5 @@ void desenha()
 void inicializar()
 {
   glClearColor(0,0,0,0);
+  player.start();
 }
