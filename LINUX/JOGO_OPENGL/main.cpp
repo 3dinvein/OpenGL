@@ -2,14 +2,18 @@
 
 #include "classes/player.cpp"
 
+
 //Instanciações de objetos de classe
 Player player;
 
 //Escopo de funções estão sendo obrigatórios aqui
 void inicializar(void);
-void desenha(void); 
+void desenha(void);
 void tecladoEspecial(int tecla, int x, int y);
 void tecladoAscii(unsigned char tecla, int x, int y);
+//void animaInimigo(int value);
+
+//bool trocarDirecao = false;
 
 //Função Main é onde tudo acontece de fato
 int main(int argc, char** argv){
@@ -23,6 +27,7 @@ int main(int argc, char** argv){
   glutDisplayFunc(desenha);
   glutSpecialFunc(tecladoEspecial);
   glutKeyboardFunc(tecladoAscii);
+ // glutTimerFunc(1000,animaInimigo,1);
   glutMainLoop();
 
 }
@@ -72,4 +77,16 @@ void tecladoAscii(unsigned char tecla, int x, int y)
     case 27: exit(0);break;
   }
   glutPostRedisplay();
+}
+
+//Animação Inimiga para esquerda e pra direita 
+void animaInimigo(int value)
+{
+//  if(player.getMoverX() <= -90 && trocarDirecao==false){trocarDirecao = true;}
+ // if(player.getMoverX() >= 90 && trocarDirecao==true){trocarDirecao = false;}
+ // if(trocarDirecao == false){player.setMoverX(-5);}
+ // if(trocarDirecao == true){player.setMoverX(5);}
+
+  glutPostRedisplay();
+  glutTimerFunc(1000,animaInimigo,1);
 }
