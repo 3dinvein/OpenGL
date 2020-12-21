@@ -1,19 +1,22 @@
 #include <GL/freeglut.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "classes/player.cpp"
-
+#include "classes/inimigo.cpp"
 
 //Instanciações de objetos de classe
 Player player;
+Inimigo inimigo[15];
 
 //Escopo de funções estão sendo obrigatórios aqui
-void inicializar(void);
+void inicializaObjetos(void);
 void desenha(void);
 void tecladoEspecial(int tecla, int x, int y);
 void tecladoAscii(unsigned char tecla, int x, int y);
-//void animaInimigo(int value);
+void animaInimigo(int value);
 
-//bool trocarDirecao = false;
+bool trocarDirecao = false;
 
 //Função Main é onde tudo acontece de fato
 int main(int argc, char** argv){
@@ -23,11 +26,11 @@ int main(int argc, char** argv){
   glutInitWindowPosition(240,0);
   glutInitWindowSize(480,640);
   glutCreateWindow("Jogo Opengl");
-  inicializar();
+  inicializaObjetos();
   glutDisplayFunc(desenha);
   glutSpecialFunc(tecladoEspecial);
   glutKeyboardFunc(tecladoAscii);
- // glutTimerFunc(1000,animaInimigo,1);
+  glutTimerFunc(1000,animaInimigo,1);
   glutMainLoop();
 
 }
@@ -43,14 +46,16 @@ void desenha()
   glLoadIdentity();
 
   player.criarPlayer();
+  inimigo[0].criarInimigo();
   glutSwapBuffers();
 
 }
 //O que queremos que aconteça quando iniciamos o jogo
-void inicializar()
+void inicializaObjetos()
 {
   glClearColor(0,0,0,0);
   player.start();
+  inimigo[0].inicializa();
 }
 
 //Função para pegar teclas como (PageUp,Insert,Setas do teclados, F1...F12).
@@ -82,10 +87,10 @@ void tecladoAscii(unsigned char tecla, int x, int y)
 //Animação Inimiga para esquerda e pra direita 
 void animaInimigo(int value)
 {
-//  if(player.getMoverX() <= -90 && trocarDirecao==false){trocarDirecao = true;}
- // if(player.getMoverX() >= 90 && trocarDirecao==true){trocarDirecao = false;}
- // if(trocarDirecao == false){player.setMoverX(-5);}
- // if(trocarDirecao == true){player.setMoverX(5);}
+  if(inimigo[0].getMoverX() <= -90 && trocarDirecao==false){trocarDirecao = true;}
+  if(inimigo[0].getMoverX() >= 90 && trocarDirecao==true){trocarDirecao = false;}
+  if(trocarDirecao == false){inimigo[0].setMoverX(-5);}
+  if(trocarDirecao == true){inimigo[0].setMoverX(5);}
 
   glutPostRedisplay();
   glutTimerFunc(1000,animaInimigo,1);
