@@ -12,7 +12,7 @@ public:
     moverX = 0;
     moverY = 0;
     posicaoX = 0;
-    posicaoY = 80;
+    posicaoY = 0;
     x1 = 0;
     y2 = -6;
     x2 = -6;
@@ -24,14 +24,14 @@ public:
   void criarInimigo()
   {
     glPushMatrix();
-    glTranslatef(posicaoX,posicaoY,0);
+    glTranslatef(0,85,0);
     glBegin(GL_TRIANGLES);
     glColor3f(1,0,0);
-    glVertex2f(x1+moverX,y1+moverY);
+    glVertex2f(x1+moverX,y1+moverY+posicaoY);
     glColor3f(0,1,0);
-    glVertex2f(x2+moverX,y2+moverY);
+    glVertex2f(x2+moverX,y2+moverY+posicaoY);
     glColor3f(0,0,1);
-    glVertex2f(x3+moverX,y3+moverY);
+    glVertex2f(x3+moverX,y3+moverY+posicaoY);
     glEnd();
     glPopMatrix();
   }
@@ -72,7 +72,7 @@ public:
   //Posição em Y
   void setPosicaoY(float novaPosicaoY)
   {
-    posicaoY = novaPosicaoY; 
+    posicaoY += novaPosicaoY; 
   }
 
   float getPosicaoY()

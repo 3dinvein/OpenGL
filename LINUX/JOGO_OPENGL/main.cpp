@@ -15,9 +15,11 @@ void desenha(void);
 void tecladoEspecial(int tecla, int x, int y);
 void tecladoAscii(unsigned char tecla, int x, int y);
 void animaInimigo(int value);
+void tempoInimigoY(int novoTempo);
 
 bool trocarDirecao = false;
-
+int tempo=0;
+bool contarTempo = false;
 //Função Main é onde tudo acontece de fato
 int main(int argc, char** argv){
 
@@ -31,6 +33,7 @@ int main(int argc, char** argv){
   glutSpecialFunc(tecladoEspecial);
   glutKeyboardFunc(tecladoAscii);
   glutTimerFunc(1000,animaInimigo,1);
+  glutTimerFunc(1000,tempoInimigoY,1);
   glutMainLoop();
 
 }
@@ -94,4 +97,28 @@ void animaInimigo(int value)
 
   glutPostRedisplay();
   glutTimerFunc(1000,animaInimigo,1);
+}
+
+void tempoInimigoY(int novoTempo)
+{
+
+  if(trocarDirecao == true)
+  {
+   contarTempo = true;
+  }
+
+ if(contarTempo)
+  {
+    tempo += novoTempo;
+   if(tempo == 36)
+   {
+     tempo = 0;
+     inimigo[0].setPosicaoY(-5);
+   }
+  }
+
+  printf("tempo: %i\n",tempo);
+  glutPostRedisplay();
+  glutTimerFunc(1000,tempoInimigoY,1);
+
 }
