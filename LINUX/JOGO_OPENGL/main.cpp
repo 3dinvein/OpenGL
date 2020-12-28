@@ -4,10 +4,12 @@
 
 #include "classes/player.cpp"
 #include "classes/inimigo.cpp"
+#include "classes/bala.cpp"
 
 //Instanciações de objetos de classe
 Player player;
 Inimigo inimigo[15];
+Bala bala;
 
 //Escopo de funções estão sendo obrigatórios aqui
 void inicializaObjetos(void);
@@ -50,6 +52,7 @@ void desenha()
 
   player.criarPlayer();
   inimigo[0].criarInimigo();
+  bala.criarBala(); 
   glutSwapBuffers();
 
 }
@@ -59,6 +62,7 @@ void inicializaObjetos()
   glClearColor(0,0,0,0);
   player.start();
   inimigo[0].inicializa();
+  bala.inicializa();
 }
 
 //Função para pegar teclas como (PageUp,Insert,Setas do teclados, F1...F12).
