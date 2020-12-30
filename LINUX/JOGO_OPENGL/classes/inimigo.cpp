@@ -4,7 +4,7 @@ private:
   float x1,x2,x3;
   float y1,y2,y3;
   float moverX,moverY;
-  float posicaoX,posicaoY;
+  float posicaoX,posicaoY; 
 
 public:
   void inicializa()
@@ -19,6 +19,7 @@ public:
     y2 = 6;
     x3 = 6;
     y3 = 6;
+
   }
 
   void criarInimigo()
@@ -34,6 +35,7 @@ public:
     glVertex2f(x3+moverX,y3+moverY+posicaoY);
     glEnd();
     glPopMatrix();
+
   }
 
   //Mover eixo X

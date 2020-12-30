@@ -40,6 +40,15 @@ int main(int argc, char** argv){
 
 }
 
+//O que queremos que aconteça quando iniciamos o jogo
+void inicializaObjetos()
+{
+  glClearColor(0,0,0,0);
+  player.start();
+  inimigo[0].inicializa();
+  bala.inicializa();
+}
+
 //Função que desenha na tela
 void desenha()
 {
@@ -56,14 +65,7 @@ void desenha()
   glutSwapBuffers();
 
 }
-//O que queremos que aconteça quando iniciamos o jogo
-void inicializaObjetos()
-{
-  glClearColor(0,0,0,0);
-  player.start();
-  inimigo[0].inicializa();
-  bala.inicializa();
-}
+
 
 //Função para pegar teclas como (PageUp,Insert,Setas do teclados, F1...F12).
 void tecladoEspecial(int tecla, int x, int y)
