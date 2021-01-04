@@ -26,12 +26,13 @@ public:
   void criarBala()
   {
     glPushMatrix();
+    glTranslatef(posicaoX,posicaoY,0);
     glColor3f(0,1,0);
     glBegin(GL_QUADS);
-    glVertex2f(x1+moverX,y1+moverY+posicaoY);
-    glVertex2f(x2+moverX,y2+moverY+posicaoY);
-    glVertex2f(x3+moverX,y3+moverY+posicaoY);
-    glVertex2f(x4+moverX,y4+moverY+posicaoY);
+    glVertex2f(x1+moverX,y1+moverY);
+    glVertex2f(x2+moverX,y2+moverY);
+    glVertex2f(x3+moverX,y3+moverY);
+    glVertex2f(x4+moverX,y4+moverY);
     glEnd();
     glPopMatrix();
   }
@@ -72,7 +73,7 @@ public:
   //Posição em Y
   void setPosicaoY(float novaPosicaoY)
   {
-    posicaoY += novaPosicaoY; 
+    posicaoY = novaPosicaoY; 
   }
 
   float getPosicaoY()

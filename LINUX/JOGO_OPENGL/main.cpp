@@ -18,6 +18,7 @@ void tecladoEspecial(int tecla, int x, int y);
 void tecladoAscii(unsigned char tecla, int x, int y);
 void animaInimigo(int value);
 void tempoInimigoY(int novoTempo);
+void animaTiroInimigo(int value);
 
 bool trocarDirecao = false;
 int tempo=0;
@@ -36,6 +37,7 @@ int main(int argc, char** argv){
   glutKeyboardFunc(tecladoAscii);
   glutTimerFunc(1000,animaInimigo,1);
   glutTimerFunc(1000,tempoInimigoY,1);
+  glutTimerFunc(33,animaTiroInimigo,1);
   glutMainLoop();
 
 }
@@ -47,6 +49,8 @@ void inicializaObjetos()
   player.start();
   inimigo[0].inicializa();
   bala.inicializa();
+  bala.setPosicaoX(inimigo[0].getMoverX());
+  bala.setPosicaoY(inimigo[0].getPosicaoY());
 }
 
 //Função que desenha na tela
@@ -123,8 +127,23 @@ void tempoInimigoY(int novoTempo)
    }
   }
 
-  printf("tempo: %i\n",tempo);
+  //printf("tempo: %i\n",tempo);
   glutPostRedisplay();
   glutTimerFunc(1000,tempoInimigoY,1);
+
+}
+
+void animaTiroInimigo(int value)
+{
+  bala.setMoverY(-1);
+  //printf("Bala.Y: %f\n",bala.getMoverY());
+  if(bala.getMoverY() <= -200)
+  {
+    bala.inicializa();
+    bala.setPosicaoX(inimigo[0].getMoverX());
+    bala.setPosicaoY(inimigo[0].getPosicaoY());
+  }
+  glutPostRedisplay();
+  glutTimerFunc(33,animaTiroInimigo,1);
 
 }
