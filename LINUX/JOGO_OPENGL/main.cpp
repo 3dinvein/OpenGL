@@ -3,13 +3,16 @@
 #include <stdlib.h>
 
 #include "classes/player.cpp"
+#include "classes/balaPlayer.cpp"
 #include "classes/inimigo.cpp"
-#include "classes/bala.cpp"
+#include "classes/balaInimigo.cpp"
 
 //Instanciações de objetos de classe
 Player player;
+BalaPlayer balaPlayer;
+
 Inimigo inimigo[15];
-Bala bala;
+BalaInimigo balaInimigo;
 
 //Escopo de funções estão sendo obrigatórios aqui
 void inicializaObjetos(void);
@@ -19,10 +22,13 @@ void tecladoAscii(unsigned char tecla, int x, int y);
 void animaInimigo(int value);
 void tempoInimigoY(int novoTempo);
 void animaTiroInimigo(int value);
+void animaTiroPlayer(int value);
 
+//Variáveis Globais
 bool trocarDirecao = false;
 int tempo=0;
 bool contarTempo = false;
+
 //Função Main é onde tudo acontece de fato
 int main(int argc, char** argv){
 
@@ -38,19 +44,26 @@ int main(int argc, char** argv){
   glutTimerFunc(1000,animaInimigo,1);
   glutTimerFunc(1000,tempoInimigoY,1);
   glutTimerFunc(33,animaTiroInimigo,1);
+  glutTimerFunc(33,animaTiroPlayer,1);
   glutMainLoop();
 
 }
 
-//O que queremos que aconteça quando iniciamos o jogo
+//Aqui iniciamos o objeto quando iniciamos o jogo
 void inicializaObjetos()
 {
   glClearColor(0,0,0,0);
+
   player.start();
+  balaPlayer.inicializa();
+  balaPlayer.setPosicaoX(player.getMoverX());
+  balaPlayer.setPosicaoY(player.getPosicaoY());
+
   inimigo[0].inicializa();
-  bala.inicializa();
-  bala.setPosicaoX(inimigo[0].getMoverX());
-  bala.setPosicaoY(inimigo[0].getPosicaoY());
+  balaInimigo.inicializa();
+  balaInimigo.setPosicaoX(inimigo[0].getMoverX());
+  balaInimigo.setPosicaoY(inimigo[0].getPosicaoY());
+ 
 }
 
 //Função que desenha na tela
@@ -64,8 +77,11 @@ void desenha()
   glLoadIdentity();
 
   player.criarPlayer();
+  balaPlayer.criarBala();
+
   inimigo[0].criarInimigo();
-  bala.criarBala(); 
+  balaInimigo.criarBala();
+
   glutSwapBuffers();
 
 }
@@ -104,7 +120,6 @@ void animaInimigo(int value)
   if(inimigo[0].getMoverX() >= 90 && trocarDirecao==true){trocarDirecao = false;}
   if(trocarDirecao == false){inimigo[0].setMoverX(-5);}
   if(trocarDirecao == true){inimigo[0].setMoverX(5);}
-
   glutPostRedisplay();
   glutTimerFunc(1000,animaInimigo,1);
 }
@@ -117,7 +132,7 @@ void tempoInimigoY(int novoTempo)
    contarTempo = true;
   }
 
- if(contarTempo)
+  if(contarTempo)
   {
     tempo += novoTempo;
    if(tempo == 36)
@@ -135,15 +150,33 @@ void tempoInimigoY(int novoTempo)
 
 void animaTiroInimigo(int value)
 {
-  bala.setMoverY(-1);
-  //printf("Bala.Y: %f\n",bala.getMoverY());
-  if(bala.getMoverY() <= -200)
-  {
-    bala.inicializa();
-    bala.setPosicaoX(inimigo[0].getMoverX());
-    bala.setPosicaoY(inimigo[0].getPosicaoY());
-  }
+
+    balaInimigo.setMoverY(-1);
+    //printf("Bala.Y: %f\n",balaInimigo.getMoverY());
+    if(balaInimigo.getMoverY() <= -200)
+    {
+      balaInimigo.inicializa();
+      balaInimigo.setPosicaoX(inimigo[0].getMoverX());
+      balaInimigo.setPosicaoY(inimigo[0].getPosicaoY());
+    }
+
   glutPostRedisplay();
   glutTimerFunc(33,animaTiroInimigo,1);
+}
 
+
+void animaTiroPlayer(int value)
+{
+
+    balaPlayer.setMoverY(1);
+    //printf("Bala.Y: %f\n",balaInimigo.getMoverY());
+    if(balaPlayer.getMoverY() >= 200)
+    {
+      balaPlayer.inicializa();
+      balaPlayer.setPosicaoX(player.getMoverX());
+      balaPlayer.setPosicaoY(player.getPosicaoY());
+    }
+
+  glutPostRedisplay();
+  glutTimerFunc(33,animaTiroPlayer,1); 
 }
