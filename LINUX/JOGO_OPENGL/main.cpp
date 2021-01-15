@@ -1,13 +1,17 @@
 #include <GL/freeglut.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "classes/player.cpp"
 #include "classes/balaPlayer.cpp"
 #include "classes/inimigo.cpp"
 #include "classes/balaInimigo.cpp"
+#include "classes/menu.cpp"
 
 //Instanciações de objetos de classe
+Menu menu;
+
 Player player;
 BalaPlayer balaPlayer;
 
@@ -28,6 +32,12 @@ void animaTiroPlayer(int value);
 bool trocarDirecao = false;
 int tempo=0;
 bool contarTempo = false;
+
+// Menu
+//int startMenu=1;
+//int startJogo=0;
+bool menuAtivado=true;
+
 
 //Função Main é onde tudo acontece de fato
 int main(int argc, char** argv){
@@ -76,11 +86,22 @@ void desenha()
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
 
+  if(menuAtivado)
+  {
+   glClearColor(1,1,1,1);
+   menu.menuPrincipal();
+  }
+   
+  else if(menuAtivado == false)
+  {
+   glClearColor(0,0,0,0);
   player.criarPlayer();
   balaPlayer.criarBala();
 
   inimigo[0].criarInimigo();
   balaInimigo.criarBala();
+  
+  }
 
   glutSwapBuffers();
 
@@ -109,6 +130,7 @@ void tecladoAscii(unsigned char tecla, int x, int y)
   switch(tecla)
   {
     case 27: exit(0);break;
+    case '1': menuAtivado = false; break;
   }
   glutPostRedisplay();
 }
