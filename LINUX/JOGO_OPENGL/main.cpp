@@ -23,8 +23,9 @@ void inicializaObjetos(void);
 void desenha(void);
 void tecladoEspecial(int tecla, int x, int y);
 void tecladoAscii(unsigned char tecla, int x, int y);
-void animaInimigo(int value);
-void tempoInimigoY(int novoTempo);
+void tempoDeInicio(int value);
+void animaInimigoX(int value);
+void animaInimigoY(int novoTempo);
 void animaTiroInimigo(int value);
 void animaTiroPlayer(int value);
 
@@ -34,9 +35,15 @@ int tempo=0;
 bool contarTempo = false;
 
 // Menu
-//int startMenu=1;
-//int startJogo=0;
 bool menuAtivado=true;
+bool jogoAtivado = false;
+bool possoContarTempoDeInicio = false;
+float tempoInimigoX=1000;//1000 = 1 segundo
+float tempoInimigoY=1000; //1000 = 1 segundo
+float tempoTiroInimigo=33; // 33 = 0.033 segundos deltaTime
+float tempoTiroPlayer=33; // 33 = 0.033 segundos deltaTime
+int tempoInicio=1000;
+int contTempoPraComecar=0;
 
 
 //Função Main é onde tudo acontece de fato
@@ -47,14 +54,16 @@ int main(int argc, char** argv){
   glutInitWindowPosition(240,0);
   glutInitWindowSize(480,640);
   glutCreateWindow("Jogo Opengl");
+
   inicializaObjetos();
   glutDisplayFunc(desenha);
   glutSpecialFunc(tecladoEspecial);
   glutKeyboardFunc(tecladoAscii);
-  glutTimerFunc(1000,animaInimigo,1);
-  glutTimerFunc(1000,tempoInimigoY,1);
-  glutTimerFunc(33,animaTiroInimigo,1);
-  glutTimerFunc(33,animaTiroPlayer,1);
+  glutTimerFunc(tempoInicio,tempoDeInicio,1);
+  glutTimerFunc(tempoInimigoX,animaInimigoX,1);
+  glutTimerFunc(tempoInimigoY,animaInimigoY,1);
+  glutTimerFunc(tempoTiroInimigo,animaTiroInimigo,1);
+  glutTimerFunc(tempoTiroPlayer,animaTiroPlayer,1);
   glutMainLoop();
 
 }
@@ -73,7 +82,7 @@ void inicializaObjetos()
   balaInimigo.inicializa();
   balaInimigo.setPosicaoX(inimigo[0].getMoverX());
   balaInimigo.setPosicaoY(inimigo[0].getPosicaoY());
- 
+
 }
 
 //Função que desenha na tela
@@ -86,21 +95,26 @@ void desenha()
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
 
-  if(menuAtivado)
+  if(menuAtivado==true)
   {
-   glClearColor(1,1,1,1);
-   menu.menuPrincipal();
+     glClearColor(1,1,1,1);
+     contTempoPraComecar = 0;
+     menu.menuPrincipal();
   }
-   
-  else if(menuAtivado == false)
-  {
-   glClearColor(0,0,0,0);
-  player.criarPlayer();
-  balaPlayer.criarBala();
 
-  inimigo[0].criarInimigo();
-  balaInimigo.criarBala();
-  
+  if(menuAtivado==false)
+  {
+      glClearColor(0,0,0,0);
+      if(contTempoPraComecar >= 5)
+     {
+       balaPlayer.setPosicaoY(player.getPosicaoY());
+       player.criarPlayer();
+       balaPlayer.criarBala();
+
+       balaInimigo.setPosicaoY(inimigo[0].getPosicaoY());
+       inimigo[0].criarInimigo();
+       balaInimigo.criarBala();
+     }
   }
 
   glutSwapBuffers();
@@ -130,23 +144,40 @@ void tecladoAscii(unsigned char tecla, int x, int y)
   switch(tecla)
   {
     case 27: exit(0);break;
-    case '1': menuAtivado = false; break;
+    case '1': menuAtivado = !menuAtivado; 
+              possoContarTempoDeInicio = !possoContarTempoDeInicio; 
+              break;
   }
   glutPostRedisplay();
 }
 
+void tempoDeInicio(int value)
+{
+  
+  if(possoContarTempoDeInicio == true)
+  { 
+    if(contTempoPraComecar < 5)
+    {
+     contTempoPraComecar += 1; 
+     printf("Comeca em: %d\n",contTempoPraComecar);
+    }
+  }
+  glutPostRedisplay();
+  glutTimerFunc(tempoInicio,tempoDeInicio,1);
+}
+
 //Animação Inimiga para esquerda e pra direita 
-void animaInimigo(int value)
+void animaInimigoX(int value)
 {
   if(inimigo[0].getMoverX() <= -90 && trocarDirecao==false){trocarDirecao = true;}
   if(inimigo[0].getMoverX() >= 90 && trocarDirecao==true){trocarDirecao = false;}
   if(trocarDirecao == false){inimigo[0].setMoverX(-5);}
   if(trocarDirecao == true){inimigo[0].setMoverX(5);}
   glutPostRedisplay();
-  glutTimerFunc(1000,animaInimigo,1);
+  glutTimerFunc(tempoInimigoX,animaInimigoX,1);
 }
 
-void tempoInimigoY(int novoTempo)
+void animaInimigoY(int novoTempo)
 {
 
   if(trocarDirecao == true)
@@ -166,7 +197,7 @@ void tempoInimigoY(int novoTempo)
 
   //printf("tempo: %i\n",tempo);
   glutPostRedisplay();
-  glutTimerFunc(1000,tempoInimigoY,1);
+  glutTimerFunc(tempoInimigoY,animaInimigoY,1);
 
 }
 
@@ -183,7 +214,7 @@ void animaTiroInimigo(int value)
     }
 
   glutPostRedisplay();
-  glutTimerFunc(33,animaTiroInimigo,1);
+  glutTimerFunc(tempoTiroInimigo,animaTiroInimigo,1);
 }
 
 
@@ -200,5 +231,5 @@ void animaTiroPlayer(int value)
     }
 
   glutPostRedisplay();
-  glutTimerFunc(33,animaTiroPlayer,1); 
+  glutTimerFunc(tempoTiroPlayer,animaTiroPlayer,1); 
 }
